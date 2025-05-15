@@ -1,9 +1,9 @@
 <template>
 <div>
-	<div class="container" :style='{"minHeight":"100vh","alignItems":"center","background":"url(http://codegen.caihongy.cn/20230106/58eb0ca95fe94ea3912632230dc4f6d4.jpg) no-repeat center top /  100% 100%,#fff","display":"flex","width":"100%","backgroundSize":"cover","backgroundPosition":"center center","backgroundRepeat":"no-repeat","justifyContent":"center"}'>
+	<div class="container" :style='{"minHeight":"100vh","alignItems":"center","background":"url(https://pic.616pic.com/bg_w1180/00/00/89/lpzAc5WHFo.jpg) no-repeat center top /  100% 100%,#fff","display":"flex","width":"100%","backgroundSize":"cover","backgroundPosition":"center center","backgroundRepeat":"no-repeat","justifyContent":"center"}'>
 		<el-form ref="loginForm" :model="loginForm" :style='{"padding":"20px  240px 40px  40px","boxShadow":"0 0px 0px rgba(0, 0, 0, .1)","margin":"0","borderColor":"#98c6e2 #5fa6d0 #98c6e2 #5fa6d0","outline":"1px solid #eee","borderRadius":"0px","background":"#fff","borderWidth":"8px 16px 8px 16px","width":"800px","position":"relative","borderStyle":"solid","height":"auto"}' :rules="rules">
 			<div v-if="true" :style='{"margin":"0 0 4px","color":"#5fa6d0","textAlign":"center","width":"100%","lineHeight":"44px","fontSize":"22px","textShadow":"0px 0px 0px rgba(64, 158, 255, .5)"}'>USER / LOGIN</div>
-			<div v-if="true" :style='{"boxShadow":"inset 0px 0px 0px 0px #c5f1c0","margin":"0px 0 20px","borderColor":"#98c6e2 #5fa6d0 #98c6e2 #5fa6d0","color":"#333","textAlign":"center","background":"#fff","borderWidth":"8px 16px 8px 16px","width":"100%","lineHeight":"44px","fontSize":"16px","borderStyle":"solid","textShadow":"0px 0px 0px rgba(64, 158, 255, .5)"}'>体检中心健康体检管理系统登录</div>
+			<div v-if="true" :style='{"boxShadow":"inset 0px 0px 0px 0px #c5f1c0","margin":"0px 0 20px","borderColor":"#98c6e2 #5fa6d0 #98c6e2 #5fa6d0","color":"#333","textAlign":"center","background":"#fff","borderWidth":"8px 16px 8px 16px","width":"100%","lineHeight":"44px","fontSize":"16px","borderStyle":"solid","textShadow":"0px 0px 0px rgba(64, 158, 255, .5)"}'>健康体检中心预约与提醒系统登录</div>
 			<el-form-item v-if="loginType==1" class="list-item" :style='{"width":"80%","margin":"0 auto 10px"}' prop="username">
 				<div v-if="false" :style='{"width":"64px","lineHeight":"44px","fontSize":"14px","color":"rgba(64, 158, 255, 1)"}'>账号：</div>
 				<input :style='{"border":"2px solid #98c6e2","padding":"0 10px","color":"#333","borderRadius":"4px","width":"100%","fontSize":"14px","height":"44px"}' v-model="loginForm.username" placeholder="请输入账户">
@@ -172,7 +172,7 @@ export default {
 <style rel="stylesheet/scss" lang="scss" scoped>
 	.container {
 		position: relative;
-		background: url(http://codegen.caihongy.cn/20230106/58eb0ca95fe94ea3912632230dc4f6d4.jpg) no-repeat center top /  100% 100%,#fff;
+		background: url(https://pic.616pic.com/bg_w1180/00/00/89/lpzAc5WHFo.jpg) no-repeat center top /  100% 100%,#fff;
 		
 		.el-form-item {
 		  & /deep/ .el-form-item__content {

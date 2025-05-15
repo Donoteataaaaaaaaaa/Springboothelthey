@@ -9,7 +9,7 @@ const base = {
     },
     getProjectName(){
         return {
-            projectName: "体检中心健康体检管理系统"
+            projectName: "健康体检中心预约与提醒系统"
         } 
     }
 }

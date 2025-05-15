@@ -2,7 +2,7 @@
 	<div>
 		<div class="container" :style='{"minHeight":"100vh","alignItems":"center","background":"url(http://codegen.caihongy.cn/20220804/7648d96a851c43558bf08d2a7403a0a0.gif)","display":"flex","width":"100%","backgroundSize":"cover","backgroundPosition":"center center","backgroundRepeat":"no-repeat","justifyContent":"center"}'>
 			<el-form v-if="pageFlag=='register'" :style='{"minHeight":"750px","border":"3px solid rgba(64, 75, 95, 1)","padding":"80px 50px","margin":"0","borderRadius":"350px","background":"#fff","width":"450px","height":"auto"}' ref="rgsForm" class="rgs-form" :model="rgsForm">
-				<div v-if="true" :style='{"margin":"0 auto 20px","color":"#333","textAlign":"center","width":"80%","lineHeight":"44px","fontSize":"24px","fontWeight":"600"}' class="title">体检中心健康体检管理系统注册</div>
+				<div v-if="true" :style='{"margin":"0 auto 20px","color":"#333","textAlign":"center","width":"80%","lineHeight":"44px","fontSize":"24px","fontWeight":"600"}' class="title">健康体检中心预约与提醒系统注册</div>
 				<el-form-item :style='{"width":"80%","padding":"0","margin":"0 auto 15px","height":"auto"}' class="list-item" v-if="tableName=='canjianrenyuan'">
 					<div v-if="false" :style='{"width":"64px","lineHeight":"44px","fontSize":"14px","color":"rgba(64, 158, 255, 1)"}' class="lable">用户账号</div>
 					<el-input  v-model="ruleForm.yonghuzhanghao"  autocomplete="off" placeholder="用户账号"  type="text"  />

@@ -2,7 +2,7 @@
 	<div class="main-containers">
 		<div class="top-container" :style='{"padding":"0 30px","overflow":"hidden","top":"0","alignItems":"center","left":"0","background":"url(http://codegen.caihongy.cn/20230106/a539c2eae5fc494c8c437927bc4dec2c.jpg) no-repeat center top","display":"flex","width":"100%","position":"relative","justifyContent":"space-between","height":"64px","zIndex":"1002"}'>
 			<img v-if='true' :style='{"width":"44px","objectFit":"cover","borderRadius":"100%","display":"none","height":"44px"}' src='http://codegen.caihongy.cn/20201114/7856ba26477849ea828f481fa2773a95.jpg'>
-			<div v-if="true" :style='{"width":"calc(100% - 760px)","margin":"0 0 0 380px","fontSize":"22px","color":"#fff","textAlign":"center","background":"none"}'>体检中心健康体检管理系统</div>
+			<div v-if="true" :style='{"width":"calc(100% - 760px)","margin":"0 0 0 380px","fontSize":"22px","color":"#fff","textAlign":"center","background":"none"}'>健康体检中心预约与提醒系统</div>
 			<div>
 				<div v-if="false" :style='{"color":"#fff","fontSize":"16px","display":"inline-block"}'></div>
 				<div v-if="Token" :style='{"color":"#fff","fontSize":"16px","display":"inline-block"}'>{{username}}</div>

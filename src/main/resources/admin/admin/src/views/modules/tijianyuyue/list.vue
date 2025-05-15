@@ -139,12 +139,12 @@
 							{{scope.row.xingming}}
 						</template>
 					</el-table-column>
-					<el-table-column :resizable='true' :sortable='true' prop="ispay" label="是否支付">
-						<template slot-scope="scope">
-							<span style="margin-right:10px">{{scope.row.ispay=='已支付'?'已支付':'未支付'}}</span>
-							<el-button v-if="scope.row.ispay!='已支付' && isAuth('tijianyuyue','支付') " type="text" size="small" @click="payHandler(scope.row)">支付</el-button>
-						</template>
-					</el-table-column>
+<!--					<el-table-column :resizable='true' :sortable='true' prop="ispay" label="是否支付">-->
+<!--						<template slot-scope="scope">-->
+<!--							<span style="margin-right:10px">{{scope.row.ispay=='已支付'?'已支付':'未支付'}}</span>-->
+<!--							<el-button v-if="scope.row.ispay!='已支付' && isAuth('tijianyuyue','支付') " type="text" size="small" @click="payHandler(scope.row)">支付</el-button>-->
+<!--						</template>-->
+<!--					</el-table-column>-->
 					<el-table-column :resizable='true' :sortable='true' prop="shhf" label="审核回复"></el-table-column>
 					<el-table-column :resizable='true' :sortable='true' prop="sfsh" label="审核状态">
 						<template slot-scope="scope">

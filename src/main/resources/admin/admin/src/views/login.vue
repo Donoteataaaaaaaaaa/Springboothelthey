@@ -1,9 +1,9 @@
 <template>
   <div>
-    <div class="container" :style='{"minHeight":"100vh","alignItems":"center","background":"url(http://codegen.caihongy.cn/20220804/122aadd2e96d4d5aa6a265bbd560a18d.gif)","display":"flex","width":"100%","backgroundSize":"cover","backgroundPosition":"center center","backgroundRepeat":"no-repeat","justifyContent":"center"}'>
+    <div class="container" :style='{"minHeight":"100vh","alignItems":"center","background":"url(https://zsszpt.com/file/aa5319016d5e4cf5b0e4a792b9a5a5b6_p.jpg)","display":"flex","width":"100%","backgroundSize":"cover","backgroundPosition":"center center","backgroundRepeat":"no-repeat","justifyContent":"center"}'>
 
       <el-form :style='{"border":"3px solid rgba(64, 75, 95, 1)","padding":"100px 50px 200px","margin":"0","borderRadius":"350px","background":"rgba(255, 255, 255, 0.5000)","width":"450px","height":"800px"}'>
-        <div v-if="true" :style='{"margin":"0 auto 20px","color":"#000","textAlign":"center","width":"90%","lineHeight":"44px","fontSize":"24px","fontWeight":"600","height":"auto"}' class="title-container">体检中心健康体检管理系统登录</div>
+        <div v-if="true" :style='{"margin":"0 auto 20px","color":"#000","textAlign":"center","width":"90%","lineHeight":"44px","fontSize":"24px","fontWeight":"600","height":"auto"}' class="title-container">健康体检中心预约与提醒系统登录</div>
         <div v-if="loginType==1" class="list-item" :style='{"width":"90%","margin":"0 auto 10px","alignItems":"center","flexWrap":"wrap","display":"flex"}'>
           <div v-if="false" class="lable" :style='{"width":"64px","lineHeight":"44px","fontSize":"14px","color":"rgba(64, 158, 255, 1)"}'>用户名：</div>
           <input :style='{"border":"0px solid rgba(64, 158, 255, 1)","padding":"0 10px","boxShadow":"0px 4px 10px 0px rgba(0,0,0,0.3020)","color":"#333","outlineOffset":"4px","width":"100%","fontSize":"14px","height":"44px"}' placeholder="请输入用户名" name="username" type="text" v-model="rulesForm.username">
@@ -181,7 +181,7 @@ export default {
   background-repeat: no-repeat;
   background-position: center center;
   background-size: cover;
-      background: url(http://codegen.caihongy.cn/20220804/122aadd2e96d4d5aa6a265bbd560a18d.gif);
+      background: url(https://zsszpt.com/file/aa5319016d5e4cf5b0e4a792b9a5a5b6_p.jpg);
         
   .list-item /deep/ .el-input .el-input__inner {
 		border: 0px solid rgba(64, 158, 255, 1);

@@ -72,18 +72,18 @@
 		</div>
 					
 
-<div class="recommend" :style='{"width":"100%","margin":"10px auto 10px","position":"relative","background":"none"}'>
+<div class="recommend" :style='{"width":"200%","margin":"10px auto 10px","position":"relative","background":"none"}'>
 	<div v-if="false" class="idea recommendIdea" :style='{"padding":"20px","flexWrap":"wrap","background":"#efefef","justifyContent":"space-between","display":"flex"}'>
-		<div class="box1" :style='{"width":"20%","background":"#fff","height":"80px"}'></div>
-		<div class="box2" :style='{"width":"20%","background":"#fff","height":"80px"}'></div>
-		<div class="box3" :style='{"width":"20%","background":"#fff","height":"80px"}'></div>
-		<div class="box4" :style='{"width":"20%","background":"#fff","height":"80px"}'></div>
-		<div class="box5" :style='{"width":"20%","background":"#fff","display":"none","height":"80px"}'></div>
-		<div class="box6" :style='{"width":"20%","background":"#fff","display":"none","height":"80px"}'></div>
-		<div class="box7" :style='{"width":"20%","background":"#fff","display":"none","height":"80px"}'></div>
-		<div class="box8" :style='{"width":"20%","background":"#fff","display":"none","height":"80px"}'></div>
-		<div class="box9" :style='{"width":"20%","background":"#fff","display":"none","height":"80px"}'></div>
-		<div class="box10" :style='{"width":"20%","background":"#fff","display":"none","height":"80px"}'></div>
+		<div class="box1" :style='{"width":"200%","background":"#fff","height":"80px"}'></div>
+		<div class="box2" :style='{"width":"200%","background":"#fff","height":"80px"}'></div>
+		<div class="box3" :style='{"width":"200%","background":"#fff","height":"80px"}'></div>
+		<div class="box4" :style='{"width":"200%","background":"#fff","height":"80px"}'></div>
+		<div class="box5" :style='{"width":"200%","background":"#fff","display":"none","height":"80px"}'></div>
+		<div class="box6" :style='{"width":"200%","background":"#fff","display":"none","height":"80px"}'></div>
+		<div class="box7" :style='{"width":"200%","background":"#fff","display":"none","height":"80px"}'></div>
+		<div class="box8" :style='{"width":"200%","background":"#fff","display":"none","height":"80px"}'></div>
+		<div class="box9" :style='{"width":"200%","background":"#fff","display":"none","height":"80px"}'></div>
+		<div class="box10" :style='{"width":"200%","background":"#fff","display":"none","height":"80px"}'></div>
 	</div>
 	
     <div class="title" :style='{"width":"100%","padding":"0 20px","margin":"0px auto 0px","lineHeight":"50px","textAlign":"left","background":"url(http://codegen.caihongy.cn/20230106/3c1030df5b01476da876dcb77796e839.png) no-repeat left top / auto 100%,url(http://codegen.caihongy.cn/20230106/f2208a9b176f427fa196c3e89d7bf7e1.png) no-repeat right top / auto 100%,url(http://codegen.caihongy.cn/20230106/539e485aa0d94fea9f2fbd11dd4c74b6.png) repeat-x center center / auto 100%"}'>
