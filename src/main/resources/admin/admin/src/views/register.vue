@@ -99,7 +99,7 @@ export default {
 		return {
 			ruleForm: {
                 xingbie: '',
-                xingbie: '',
+               // xingbie: '',
 			},
 
             pageFlag : '',

@@ -4,7 +4,7 @@
 	<div class="container" :style='{"minHeight":"100vh","alignItems":"center","background":"url(https://pic.616pic.com/bg_w1180/00/00/89/lpzAc5WHFo.jpg) no-repeat center top /  100% 100%,#fff","display":"flex","width":"100%","backgroundSize":"cover","backgroundPosition":"center center","backgroundRepeat":"no-repeat","justifyContent":"center"}'>
 		<el-form class='rgs-form' v-if="pageFlag=='register'" :style='{"padding":"10px 80px 20px  80px","boxShadow":"0 0px 0px rgba(0, 0, 0, .1)","margin":"0 auto","borderColor":"#98c6e2 #5fa6d0 #98c6e2 #5fa6d0","borderRadius":"0px","background":"#fff","borderWidth":"8px 16px 8px 16px","width":"800px","position":"relative","borderStyle":"solid","height":"auto"}' ref="registerForm" :model="registerForm" :rules="rules">
 			<div v-if="false" :style='{"margin":"0 0 10px 0","color":"rgba(64, 158, 255, 1)","textAlign":"center","width":"100%","lineHeight":"44px","fontSize":"20px","textShadow":"4px 4px 2px rgba(64, 158, 255, .5)"}'>USER / REGISTER</div>
-			<div v-if="true" :style='{"margin":"0 0 10px 0","borderColor":"#98c6e2 #5fa6d0 #98c6e2 #5fa6d0","color":"#333","textAlign":"center","borderWidth":"8px 16px 8px 16px","width":"100%","lineHeight":"44px","fontSize":"16px","borderStyle":"solid"}'>健康体检中心预约与提醒系统注册</p></div>
+			<div v-if="true" :style='{"margin":"0 0 10px 0","borderColor":"#98c6e2 #5fa6d0 #98c6e2 #5fa6d0","color":"#333","textAlign":"center","borderWidth":"8px 16px 8px 16px","width":"100%","lineHeight":"44px","fontSize":"16px","borderStyle":"solid"}'><p>健康体检中心预约与提醒系统注册</p></div>
 			<el-form-item :style='{"width":"100%","padding":"0","margin":"0 auto 30px","height":"auto"}' v-if="tableName=='canjianrenyuan'" prop="yonghuzhanghao">
 				<div v-if="false" :style='{"width":"64px","lineHeight":"44px","fontSize":"14px","color":"rgba(64, 158, 255, 1)"}'>用户账号：</div>
 				<el-input v-model="registerForm.yonghuzhanghao"  placeholder="请输入用户账号" />
@@ -105,7 +105,7 @@ export default {
 			tableName: '',
 			registerForm: {
                 xingbie: '',
-                xingbie: '',
+                //xingbie: '',
             },
 			rules: {},
             canjianrenyuanxingbieOptions: [],
