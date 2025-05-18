@@ -32,4 +32,10 @@ public interface UsersDao extends BaseMapper<UsersEntity> {
 	 * @return 更新记录数
 	 */
 	int batchUpdateRemindFlag(@Param("userIds") List<Long> userIds);
+
+	/**
+	 * 查询需要发送提醒的用户
+	 * @return 用户列表
+	 */
+	List<UsersEntity> selectUsersToRemind();
 }

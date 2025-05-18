@@ -28,4 +28,10 @@
 		</foreach>
 	</update>
 
+	<!-- 3. 查询需要提醒的用户 -->
+	<select id="selectUsersToRemind" resultType="com.entity.UsersEntity">
+		SELECT * FROM users
+		WHERE remindFlag = 0
+	</select>
+
 </mapper>

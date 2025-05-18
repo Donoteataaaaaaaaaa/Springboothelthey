@@ -12,15 +12,17 @@ import com.entity.view.TijiantaocanView;
 
 /**
  * 体检套餐 DAO 接口
- *
  */
 public interface TijiantaocanDao extends BaseMapper<TijiantaocanEntity> {
 
-	// 已有基础查询方法
 	List<TijiantaocanVO> selectListVO(@Param("ew") Wrapper<TijiantaocanEntity> wrapper);
+
 	TijiantaocanVO selectVO(@Param("ew") Wrapper<TijiantaocanEntity> wrapper);
+
 	List<TijiantaocanView> selectListView(@Param("ew") Wrapper<TijiantaocanEntity> wrapper);
+
 	List<TijiantaocanView> selectListView(Pagination page, @Param("ew") Wrapper<TijiantaocanEntity> wrapper);
+
 	TijiantaocanView selectView(@Param("ew") Wrapper<TijiantaocanEntity> wrapper);
 
 	// ✅ 新增方法
@@ -38,4 +40,12 @@ public interface TijiantaocanDao extends BaseMapper<TijiantaocanEntity> {
 	 * @return 最大预约人数
 	 */
 	Integer getMaxReserveCount(@Param("packageId") Long packageId);
+
+	/**
+	 * 更新套餐剩余可预约人数
+	 * @param packageId 套餐ID
+	 * @param delta 变化值（正数增加，负数减少）
+	 * @return 影响的行数
+	 */
+	int updateRemainingReserveCount(@Param("packageId") Long packageId, @Param("delta") int delta);
 }

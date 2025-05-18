@@ -5,6 +5,8 @@
 
     <!-- 实体映射 -->
     <resultMap type="com.entity.TijianyuyueEntity" id="tijianyuyueMap">
+        <id property="id" column="id"/>
+        <result property="addtime" column="addtime"/>
         <result property="tijianxiangmu" column="tijianxiangmu"/>
         <result property="taocantupian" column="taocantupian"/>
         <result property="tijianneirong" column="tijianneirong"/>
@@ -22,7 +24,12 @@
         <result property="sfsh" column="sfsh"/>
         <result property="shhf" column="shhf"/>
         <result property="ispay" column="ispay"/>
+        <result property="timeslot" column="timeslot"/>
+        <result property="remindFlag" column="remindFlag"/>
+        <result property="cancelTime" column="cancelTime"/>
+        <result property="updateTime" column="updateTime"/>
     </resultMap>
+
 
     <!-- 基础查询 -->
     <select id="selectListVO" resultType="com.entity.vo.TijianyuyueVO">
@@ -59,10 +66,11 @@
     <!-- 2. 查询需要提醒的预约记录（3天内到期且未提醒） -->
     <select id="selectRemindList" resultMap="tijianyuyueMap">
         SELECT * FROM tijianyuyue
-        WHERE DATEDIFF(yuyueshijian, NOW()) <= 3
-        AND remindFlag = 0
-        AND sfsh = '已审核'
+        WHERE DATEDIFF(yuyueshijian, NOW()) &lt;= 3
+          AND remindFlag = 0
+          AND sfsh = '已审核'
     </select>
+
 
     <!-- 3. 批量更新提醒标记 -->
     <update id="batchUpdateRemindFlag">
@@ -71,7 +79,8 @@
         WHERE id IN
         <foreach collection="ids" item="id" open="(" separator="," close=")">
             #{id}
-        </foreach>
+        </foreach>  <!-- 这个必须有 -->
     </update>
+
 
 </mapper>

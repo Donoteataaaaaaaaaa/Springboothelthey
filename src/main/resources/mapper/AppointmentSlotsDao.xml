@@ -3,6 +3,17 @@
 
 <mapper namespace="com.dao.AppointmentSlotsDao">
 
+    <resultMap type="com.entity.AppointmentSlotsEntity" id="appointmentSlotsMap">
+        <id property="id" column="id"/>
+        <result property="packageId" column="package_id"/>
+        <result property="appointmentDate" column="appointment_date"/>
+        <result property="timeslot" column="timeslot"/>
+        <result property="maxReserveCount" column="max_reserve_count"/>
+        <result property="remainingReserveCount" column="remaining_reserve_count"/>
+        <result property="addtime" column="addtime"/>
+    </resultMap>
+
+
     <!-- 查询剩余名额 -->
     <select id="getRemainingSlots" resultType="int">
         SELECT remaining_reserve_count

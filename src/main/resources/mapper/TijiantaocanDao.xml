@@ -5,6 +5,8 @@
 
 	<!-- 实体映射 -->
 	<resultMap type="com.entity.TijiantaocanEntity" id="tijiantaocanMap">
+		<id property="id" column="id"/>
+		<result property="addtime" column="addtime"/>
 		<result property="tijianxiangmu" column="tijianxiangmu"/>
 		<result property="tijiandidian" column="tijiandidian"/>
 		<result property="tijiandanwei" column="tijiandanwei"/>
@@ -16,7 +18,10 @@
 		<result property="zhanghao" column="zhanghao"/>
 		<result property="xingming" column="xingming"/>
 		<result property="clicktime" column="clicktime"/>
+		<result property="maxReserveCount" column="max_reserve_count"/>
+		<result property="remainingReserveCount" column="remaining_reserve_count"/>
 	</resultMap>
+
 
 	<!-- 基础查询 -->
 	<select id="selectListVO" resultType="com.entity.vo.TijiantaocanVO">
@@ -39,20 +44,25 @@
 		<where> 1=1 ${ew.sqlSegment}</where>
 	</select>
 
-	<!-- ✅ 新增方法 -->
-
-	<!-- 1. 查询套餐剩余可预约人数 -->
+	<!-- ✅ 新增名额查询方法 -->
 	<select id="getRemainingReserveCount" resultType="int">
 		SELECT remaining_reserve_count
 		FROM tijiantaocan
 		WHERE id = #{packageId}
 	</select>
 
-	<!-- 2. 查询套餐最大可预约人数 -->
 	<select id="getMaxReserveCount" resultType="int">
 		SELECT max_reserve_count
 		FROM tijiantaocan
 		WHERE id = #{packageId}
 	</select>
+
+	<!-- ✅ 新增名额更新方法 -->
+	<update id="updateRemainingReserveCount">
+		UPDATE tijiantaocan
+		SET remaining_reserve_count = remaining_reserve_count + #{delta}
+		WHERE id = #{packageId}
+		  AND remaining_reserve_count + #{delta} >= 0
+	</update>
 
 </mapper>
