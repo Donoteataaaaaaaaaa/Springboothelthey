@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.AppointmentSlotsDao">
+
+    <!-- 查询剩余名额 -->
+    <select id="getRemainingSlots" resultType="int">
+        SELECT remaining_reserve_count
+        FROM appointment_slots
+        WHERE package_id = #{packageId}
+          AND appointment_date = #{appointmentDate}
+          AND timeslot = #{timeslot}
+    </select>
+
+    <!-- 查询最大名额 -->
+    <select id="getMaxSlots" resultType="int">
+        SELECT max_reserve_count
+        FROM appointment_slots
+        WHERE package_id = #{packageId}
+          AND appointment_date = #{appointmentDate}
+          AND timeslot = #{timeslot}
+    </select>
+
+    <!-- 扣减剩余名额 -->
+    <update id="decreaseRemainingSlots">
+        UPDATE appointment_slots
+        SET remaining_reserve_count = remaining_reserve_count - 1
+        WHERE package_id = #{packageId}
+          AND appointment_date = #{appointmentDate}
+          AND timeslot = #{timeslot}
+          AND remaining_reserve_count > 0
+    </update>
+
+    <!-- 恢复剩余名额 -->
+    <update id="increaseRemainingSlots">
+        UPDATE appointment_slots
+        SET remaining_reserve_count = remaining_reserve_count + 1
+        WHERE package_id = #{packageId}
+          AND appointment_date = #{appointmentDate}
+          AND timeslot = #{timeslot}
+    </update>
+
+</mapper>

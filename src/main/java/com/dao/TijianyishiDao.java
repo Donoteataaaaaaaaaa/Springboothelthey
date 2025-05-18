@@ -17,7 +17,7 @@ import com.entity.view.TijianyishiView;
  * 
  * @author 
  * @email 
- * @date 2023-05-18 15:35:49
+ * 
  */
 public interface TijianyishiDao extends BaseMapper<TijianyishiEntity> {
 	

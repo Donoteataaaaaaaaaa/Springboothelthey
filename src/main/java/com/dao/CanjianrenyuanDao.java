@@ -17,7 +17,7 @@ import com.entity.view.CanjianrenyuanView;
  * 
  * @author 
  * @email 
- * @date 2023-05-18 15:35:49
+ * 
  */
 public interface CanjianrenyuanDao extends BaseMapper<CanjianrenyuanEntity> {
 	

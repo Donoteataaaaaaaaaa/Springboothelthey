@@ -1,3 +1,4 @@
+com\entity\vo\UsersVO.class
 com\entity\view\AboutusView.class
 com\entity\vo\TijianyuyueVO.class
 com\utils\MD5Util.class
@@ -7,6 +8,8 @@ com\service\UsersService.class
 com\entity\view\TijiantaocanView.class
 com\dao\TijianyishiDao.class
 com\controller\UsersController.class
+com\entity\vo\AppointmentSlotsVO.class
+com\entity\AppointmentSlotsEntity.class
 com\controller\TijiantaocanController.class
 com\controller\AboutusController.class
 com\dao\AboutusDao.class
