@@ -1,379 +1,89 @@
+
 package com.entity.vo;
 
-import com.entity.TijianyuyueEntity;
-
-import com.baomidou.mybatisplus.annotations.TableName;
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
+import java.io.Serializable;
 import java.util.Date;
 import org.springframework.format.annotation.DateTimeFormat;
-
 import com.fasterxml.jackson.annotation.JsonFormat;
-import java.io.Serializable;
- 
 
 /**
- * 体检预约
- * 手机端接口返回实体辅助类 
- * （主要作用去除一些不必要的字段）
- * @author 
- * @email 
- * @date 2023-05-18 15:35:49
+ * 体检预约 VO 类（补全版）
  */
-public class TijianyuyueVO  implements Serializable {
+@Data
+@ApiModel(value = "TijianyuyueVO", description = "体检预约传输对象")
+public class TijianyuyueVO implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	 			
-	/**
-	 * 套餐图片
-	 */
-	
+	@ApiModelProperty(value = "套餐图片")
 	private String taocantupian;
-		
-	/**
-	 * 体检内容
-	 */
-	
+
+	@ApiModelProperty(value = "体检内容")
 	private String tijianneirong;
-		
-	/**
-	 * 体检单位
-	 */
-	
+
+	@ApiModelProperty(value = "体检单位")
 	private String tijiandanwei;
-		
-	/**
-	 * 套餐价格
-	 */
-	
+
+	@ApiModelProperty(value = "套餐价格")
 	private Float taocanjiage;
-		
-	/**
-	 * 可约人数
-	 */
-	
+
+	@ApiModelProperty(value = "可约人数")
 	private Integer keyuerenshu;
-		
-	/**
-	 * 总金额
-	 */
-	
+
+	@ApiModelProperty(value = "总金额")
 	private Float zongjine;
-		
-	/**
-	 * 体检地点
-	 */
-	
+
+	@ApiModelProperty(value = "体检地点")
 	private String tijiandidian;
-		
-	/**
-	 * 用户账号
-	 */
-	
+
+	@ApiModelProperty(value = "用户账号")
 	private String yonghuzhanghao;
-		
-	/**
-	 * 用户姓名
-	 */
-	
+
+	@ApiModelProperty(value = "用户姓名")
 	private String yonghuxingming;
-		
-	/**
-	 * 手机号码
-	 */
-	
+
+	@ApiModelProperty(value = "手机号")
 	private String shoujihaoma;
-		
-	/**
-	 * 预约时间
-	 */
-		
-	@JsonFormat(locale="zh", timezone="GMT+8", pattern="yyyy-MM-dd HH:mm:ss")
-	@DateTimeFormat 
+
+	@ApiModelProperty(value = "预约时间")
+	@JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
 	private Date yuyueshijian;
-		
-	/**
-	 * 账号
-	 */
-	
+
+	@ApiModelProperty(value = "账号")
 	private String zhanghao;
-		
-	/**
-	 * 姓名
-	 */
-	
+
+	@ApiModelProperty(value = "姓名")
 	private String xingming;
-		
-	/**
-	 * 是否审核
-	 */
-	
+
+	@ApiModelProperty(value = "是否审核")
 	private String sfsh;
-		
-	/**
-	 * 审核回复
-	 */
-	
+
+	@ApiModelProperty(value = "审核回复")
 	private String shhf;
-		
-	/**
-	 * 是否支付
-	 */
-	
+
+	@ApiModelProperty(value = "是否支付")
 	private String ispay;
-				
-	
-	/**
-	 * 设置：套餐图片
-	 */
-	 
-	public void setTaocantupian(String taocantupian) {
-		this.taocantupian = taocantupian;
-	}
-	
-	/**
-	 * 获取：套餐图片
-	 */
-	public String getTaocantupian() {
-		return taocantupian;
-	}
-				
-	
-	/**
-	 * 设置：体检内容
-	 */
-	 
-	public void setTijianneirong(String tijianneirong) {
-		this.tijianneirong = tijianneirong;
-	}
-	
-	/**
-	 * 获取：体检内容
-	 */
-	public String getTijianneirong() {
-		return tijianneirong;
-	}
-				
-	
-	/**
-	 * 设置：体检单位
-	 */
-	 
-	public void setTijiandanwei(String tijiandanwei) {
-		this.tijiandanwei = tijiandanwei;
-	}
-	
-	/**
-	 * 获取：体检单位
-	 */
-	public String getTijiandanwei() {
-		return tijiandanwei;
-	}
-				
-	
-	/**
-	 * 设置：套餐价格
-	 */
-	 
-	public void setTaocanjiage(Float taocanjiage) {
-		this.taocanjiage = taocanjiage;
-	}
-	
-	/**
-	 * 获取：套餐价格
-	 */
-	public Float getTaocanjiage() {
-		return taocanjiage;
-	}
-				
-	
-	/**
-	 * 设置：可约人数
-	 */
-	 
-	public void setKeyuerenshu(Integer keyuerenshu) {
-		this.keyuerenshu = keyuerenshu;
-	}
-	
-	/**
-	 * 获取：可约人数
-	 */
-	public Integer getKeyuerenshu() {
-		return keyuerenshu;
-	}
-				
-	
-	/**
-	 * 设置：总金额
-	 */
-	 
-	public void setZongjine(Float zongjine) {
-		this.zongjine = zongjine;
-	}
-	
-	/**
-	 * 获取：总金额
-	 */
-	public Float getZongjine() {
-		return zongjine;
-	}
-				
-	
-	/**
-	 * 设置：体检地点
-	 */
-	 
-	public void setTijiandidian(String tijiandidian) {
-		this.tijiandidian = tijiandidian;
-	}
-	
-	/**
-	 * 获取：体检地点
-	 */
-	public String getTijiandidian() {
-		return tijiandidian;
-	}
-				
-	
-	/**
-	 * 设置：用户账号
-	 */
-	 
-	public void setYonghuzhanghao(String yonghuzhanghao) {
-		this.yonghuzhanghao = yonghuzhanghao;
-	}
-	
-	/**
-	 * 获取：用户账号
-	 */
-	public String getYonghuzhanghao() {
-		return yonghuzhanghao;
-	}
-				
-	
-	/**
-	 * 设置：用户姓名
-	 */
-	 
-	public void setYonghuxingming(String yonghuxingming) {
-		this.yonghuxingming = yonghuxingming;
-	}
-	
-	/**
-	 * 获取：用户姓名
-	 */
-	public String getYonghuxingming() {
-		return yonghuxingming;
-	}
-				
-	
-	/**
-	 * 设置：手机号码
-	 */
-	 
-	public void setShoujihaoma(String shoujihaoma) {
-		this.shoujihaoma = shoujihaoma;
-	}
-	
-	/**
-	 * 获取：手机号码
-	 */
-	public String getShoujihaoma() {
-		return shoujihaoma;
-	}
-				
-	
-	/**
-	 * 设置：预约时间
-	 */
-	 
-	public void setYuyueshijian(Date yuyueshijian) {
-		this.yuyueshijian = yuyueshijian;
-	}
-	
-	/**
-	 * 获取：预约时间
-	 */
-	public Date getYuyueshijian() {
-		return yuyueshijian;
-	}
-				
-	
-	/**
-	 * 设置：账号
-	 */
-	 
-	public void setZhanghao(String zhanghao) {
-		this.zhanghao = zhanghao;
-	}
-	
-	/**
-	 * 获取：账号
-	 */
-	public String getZhanghao() {
-		return zhanghao;
-	}
-				
-	
-	/**
-	 * 设置：姓名
-	 */
-	 
-	public void setXingming(String xingming) {
-		this.xingming = xingming;
-	}
-	
-	/**
-	 * 获取：姓名
-	 */
-	public String getXingming() {
-		return xingming;
-	}
-				
-	
-	/**
-	 * 设置：是否审核
-	 */
-	 
-	public void setSfsh(String sfsh) {
-		this.sfsh = sfsh;
-	}
-	
-	/**
-	 * 获取：是否审核
-	 */
-	public String getSfsh() {
-		return sfsh;
-	}
-				
-	
-	/**
-	 * 设置：审核回复
-	 */
-	 
-	public void setShhf(String shhf) {
-		this.shhf = shhf;
-	}
-	
-	/**
-	 * 获取：审核回复
-	 */
-	public String getShhf() {
-		return shhf;
-	}
-				
-	
-	/**
-	 * 设置：是否支付
-	 */
-	 
-	public void setIspay(String ispay) {
-		this.ispay = ispay;
-	}
-	
-	/**
-	 * 获取：是否支付
-	 */
-	public String getIspay() {
-		return ispay;
-	}
-			
+
+	// 新增字段
+	@ApiModelProperty(value = "预约时间段，如 9-10")
+	private String timeslot;
+
+	@ApiModelProperty(value = "预约状态（已预约/已完成/已取消）")
+	private String status;
+
+	@ApiModelProperty(value = "提醒标记（0 未提醒，1 已提醒）")
+	private Integer remindFlag;
+
+	@ApiModelProperty(value = "取消时间")
+	@JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private Date cancelTime;
+
+	@ApiModelProperty(value = "更新时间")
+	@JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private Date updateTime;
 }

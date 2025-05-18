@@ -1,36 +1,61 @@
+
 package com.entity.view;
 
-import com.entity.TijiantaocanEntity;
-
-import com.baomidou.mybatisplus.annotations.TableName;
-import org.apache.commons.beanutils.BeanUtils;
-import java.lang.reflect.InvocationTargetException;
-
+import io.swagger.annotations.ApiModel;
+import io.swagger.annotations.ApiModelProperty;
+import lombok.Data;
 import java.io.Serializable;
- 
+import java.util.Date;
+import org.springframework.format.annotation.DateTimeFormat;
+import com.fasterxml.jackson.annotation.JsonFormat;
 
 /**
- * 体检套餐
- * 后端返回视图实体辅助类   
- * （通常后端关联的表或者自定义的字段需要返回使用）
- * @author 
- * @email 
- * @date 2023-05-18 15:35:49
+ * 体检套餐 View 类（标准版）
  */
-@TableName("tijiantaocan")
-public class TijiantaocanView  extends TijiantaocanEntity implements Serializable {
+@Data
+@ApiModel(value = "TijiantaocanView", description = "体检套餐视图对象")
+public class TijiantaocanView implements Serializable {
 	private static final long serialVersionUID = 1L;
 
-	public TijiantaocanView(){
-	}
- 
- 	public TijiantaocanView(TijiantaocanEntity tijiantaocanEntity){
- 	try {
-			BeanUtils.copyProperties(this, tijiantaocanEntity);
-		} catch (IllegalAccessException | InvocationTargetException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
- 		
-	}
+	@ApiModelProperty(value = "体检项目")
+	private String tijianxiangmu;
+
+	@ApiModelProperty(value = "体检地点")
+	private String tijiandidian;
+
+	@ApiModelProperty(value = "体检单位")
+	private String tijiandanwei;
+
+	@ApiModelProperty(value = "套餐价格")
+	private Float taocanjiage;
+
+	@ApiModelProperty(value = "可约人数")
+	private Integer keyuerenshu;
+
+	@ApiModelProperty(value = "体检内容")
+	private String tijianneirong;
+
+	@ApiModelProperty(value = "体检流程")
+	private String tijianliucheng;
+
+	@ApiModelProperty(value = "套餐图片")
+	private String taocantupian;
+
+	@ApiModelProperty(value = "账号")
+	private String zhanghao;
+
+	@ApiModelProperty(value = "姓名")
+	private String xingming;
+
+	@ApiModelProperty(value = "最近点击时间")
+	@JsonFormat(locale = "zh", timezone = "GMT+8", pattern = "yyyy-MM-dd HH:mm:ss")
+	@DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+	private Date clicktime;
+
+	// 新增字段
+	@ApiModelProperty(value = "最大预约人数")
+	private Integer maxReserveCount;
+
+	@ApiModelProperty(value = "剩余可预约人数")
+	private Integer remainingReserveCount;
 }
