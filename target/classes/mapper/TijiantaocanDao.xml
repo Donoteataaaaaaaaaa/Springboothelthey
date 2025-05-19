@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.TijiantaocanDao">
+
+	<!-- 实体映射 -->
+	<resultMap type="com.entity.TijiantaocanEntity" id="tijiantaocanMap">
+		<id property="id" column="id"/>
+		<result property="addtime" column="addtime"/>
+		<result property="tijianxiangmu" column="tijianxiangmu"/>
+		<result property="tijiandidian" column="tijiandidian"/>
+		<result property="tijiandanwei" column="tijiandanwei"/>
+		<result property="taocanjiage" column="taocanjiage"/>
+		<result property="keyuerenshu" column="keyuerenshu"/>
+		<result property="tijianneirong" column="tijianneirong"/>
+		<result property="tijianliucheng" column="tijianliucheng"/>
+		<result property="taocantupian" column="taocantupian"/>
+		<result property="zhanghao" column="zhanghao"/>
+		<result property="xingming" column="xingming"/>
+		<result property="clicktime" column="clicktime"/>
+		<result property="maxReserveCount" column="max_reserve_count"/>
+		<result property="remainingReserveCount" column="remaining_reserve_count"/>
+	</resultMap>
+
+
+	<!-- 基础查询 -->
+	<select id="selectListVO" resultType="com.entity.vo.TijiantaocanVO">
+		SELECT * FROM tijiantaocan tijiantaocan
+		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+	<select id="selectVO" resultType="com.entity.vo.TijiantaocanVO">
+		SELECT tijiantaocan.* FROM tijiantaocan tijiantaocan
+		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+	<select id="selectListView" resultType="com.entity.view.TijiantaocanView">
+		SELECT tijiantaocan.* FROM tijiantaocan tijiantaocan
+		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+	<select id="selectView" resultType="com.entity.view.TijiantaocanView">
+		SELECT * FROM tijiantaocan tijiantaocan
+		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+	<!-- ✅ 新增名额查询方法 -->
+	<select id="getRemainingReserveCount" resultType="int">
+		SELECT remaining_reserve_count
+		FROM tijiantaocan
+		WHERE id = #{packageId}
+	</select>
+
+	<select id="getMaxReserveCount" resultType="int">
+		SELECT max_reserve_count
+		FROM tijiantaocan
+		WHERE id = #{packageId}
+	</select>
+
+	<!-- ✅ 新增名额更新方法 -->
+	<update id="updateRemainingReserveCount">
+		UPDATE tijiantaocan
+		SET remaining_reserve_count = remaining_reserve_count + #{delta}
+		WHERE id = #{packageId}
+		  AND remaining_reserve_count + #{delta} >= 0
+	</update>
+
+</mapper>

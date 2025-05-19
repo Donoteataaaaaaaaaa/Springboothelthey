@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.dao.UsersDao">
+
+	<!-- 基础查询 -->
+	<select id="selectListView" resultType="com.entity.UsersEntity">
+		SELECT u.* FROM users u
+		<where> 1=1 ${ew.sqlSegment}</where>
+	</select>
+
+	<!-- ✅ 新增方法 -->
+
+	<!-- 1. 更新用户状态 -->
+	<update id="updateUserStatus">
+		UPDATE users
+		SET status = #{status}
+		WHERE id = #{userId}
+	</update>
+
+	<!-- 2. 批量更新用户提醒标记 -->
+	<update id="batchUpdateRemindFlag">
+		UPDATE users
+		SET remindFlag = 1
+		WHERE id IN
+		<foreach collection="userIds" item="id" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</update>
+
+	<!-- 3. 查询需要提醒的用户 -->
+	<select id="selectUsersToRemind" resultType="com.entity.UsersEntity">
+		SELECT * FROM users
+		WHERE remindFlag = 0
+	</select>
+
+</mapper>
