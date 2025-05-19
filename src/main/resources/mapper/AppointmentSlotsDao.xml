@@ -8,15 +8,14 @@
         <result property="packageId" column="package_id"/>
         <result property="appointmentDate" column="appointment_date"/>
         <result property="timeslot" column="timeslot"/>
-        <result property="maxReserveCount" column="max_reserve_count"/>
-        <result property="remainingReserveCount" column="remaining_reserve_count"/>
+        <result property="maxReserveCount" column="max_slots"/>
+        <!-- 删除 remainingReserveCount 的直接映射 -->
         <result property="addtime" column="addtime"/>
     </resultMap>
 
-
-    <!-- 查询剩余名额 -->
+    <!-- 查询剩余名额（动态计算） -->
     <select id="getRemainingSlots" resultType="int">
-        SELECT remaining_reserve_count
+        SELECT (max_slots - reserved_slots) AS remaining_reserve_count
         FROM appointment_slots
         WHERE package_id = #{packageId}
           AND appointment_date = #{appointmentDate}
@@ -25,30 +24,31 @@
 
     <!-- 查询最大名额 -->
     <select id="getMaxSlots" resultType="int">
-        SELECT max_reserve_count
+        SELECT max_slots
         FROM appointment_slots
         WHERE package_id = #{packageId}
           AND appointment_date = #{appointmentDate}
           AND timeslot = #{timeslot}
     </select>
 
-    <!-- 扣减剩余名额 -->
+    <!-- 扣减剩余名额（更新 reserved_slots 字段） -->
     <update id="decreaseRemainingSlots">
         UPDATE appointment_slots
-        SET remaining_reserve_count = remaining_reserve_count - 1
+        SET reserved_slots = reserved_slots + 1
         WHERE package_id = #{packageId}
           AND appointment_date = #{appointmentDate}
           AND timeslot = #{timeslot}
-          AND remaining_reserve_count > 0
+          AND (max_slots - reserved_slots) > 0
     </update>
 
-    <!-- 恢复剩余名额 -->
+    <!-- 恢复剩余名额（更新 reserved_slots 字段） -->
     <update id="increaseRemainingSlots">
         UPDATE appointment_slots
-        SET remaining_reserve_count = remaining_reserve_count + 1
+        SET reserved_slots = reserved_slots - 1
         WHERE package_id = #{packageId}
           AND appointment_date = #{appointmentDate}
           AND timeslot = #{timeslot}
+          AND reserved_slots > 0
     </update>
 
 </mapper>

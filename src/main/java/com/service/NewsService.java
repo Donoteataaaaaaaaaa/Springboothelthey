@@ -16,7 +16,7 @@ import com.entity.view.NewsView;
  *
  * @author 
  * @email 
- * @date 2023-05-18 15:35:50
+ * 
  */
 public interface NewsService extends IService<NewsEntity> {
 

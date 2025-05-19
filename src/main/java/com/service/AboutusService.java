@@ -16,7 +16,7 @@ import com.entity.view.AboutusView;
  *
  * @author 
  * @email 
- * @date 2023-05-18 15:35:50
+ * 
  */
 public interface AboutusService extends IService<AboutusEntity> {
 

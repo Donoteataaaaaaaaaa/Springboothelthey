@@ -16,7 +16,7 @@ import com.entity.view.TijianjinchengView;
  *
  * @author 
  * @email 
- * @date 2023-05-18 15:35:50
+ * 
  */
 public interface TijianjinchengService extends IService<TijianjinchengEntity> {
 
